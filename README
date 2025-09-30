@@ -1,14 +1,26 @@
--- Total pizzas sold
-SELECT SUM(quantity) AS Total_Pizzas_Sold
-FROM pizza_sales;
+# 🍕 SQL + Tableau Pizza Sales Project
 
--- Average order value
-SELECT SUM(total_price) / COUNT(DISTINCT order_id) AS Avg_Order_Sale
-FROM pizza_sales;
+## Overview  
+This project analyzes pizza sales data using **MySQL** for querying and **Tableau** for visualization.  
+The goal is to explore sales trends, customer behavior, and revenue breakdowns, then present insights in an interactive dashboard.  
 
--- Revenue by category
-SELECT pizza_category,
-       ROUND(100 * SUM(total_price) / (SELECT SUM(total_price) FROM pizza_sales), 2) AS pct_of_total
-FROM pizza_sales
-GROUP BY pizza_category
-ORDER BY pct_of_total DESC;
+## Tools Used  
+- **MySQL Workbench** → to clean and query the raw dataset  
+- **Tableau** → to create interactive dashboards and visualizations  
+- **GitHub** → to document and share the project  
+
+## Key SQL Queries  
+- Total pizzas sold  
+- Average order value per customer  
+- Revenue contribution by pizza category and size  
+- Hourly/weekly sales trends  
+
+
+## Tableau Dashboard  
+📊 Interactive dashboard built in Tableau:  
+- Sales by category and size  
+- Daily and weekly sales trends  
+- Top 5 pizzas by revenue  
+
+
+
