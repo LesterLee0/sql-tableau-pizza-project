@@ -1,0 +1,14 @@
+-- Total pizzas sold
+SELECT SUM(quantity) AS Total_Pizzas_Sold
+FROM pizza_sales;
+
+-- Average order value
+SELECT SUM(total_price) / COUNT(DISTINCT order_id) AS Avg_Order_Sale
+FROM pizza_sales;
+
+-- Revenue by category
+SELECT pizza_category,
+       ROUND(100 * SUM(total_price) / (SELECT SUM(total_price) FROM pizza_sales), 2) AS pct_of_total
+FROM pizza_sales
+GROUP BY pizza_category
+ORDER BY pct_of_total DESC;
